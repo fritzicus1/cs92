@@ -9,3 +9,6 @@ WORKDIR /app
 ENV MODE=Debug
 
 ENTRYPOINT ["/bin/bash"]
+CMD ["-c", "ls -la"]
+
+EXPOSE 8000
