@@ -1,3 +1,11 @@
-FROM docker.io/httpd
+FROM docker.io/ubuntu:20.04
 
-COPY index.html /usr/local/apache2/htdocs/index.html
+RUN apt update -y && apt install -y python3-pip
+RUN python3 -m pip install django
+
+COPY app/ /app
+
+WORKDIR /app
+ENV MODE=Debug
+
+ENTRYPOINT ["/bin/bash"]
