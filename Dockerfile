@@ -10,6 +10,12 @@ WORKDIR /app
 
 ENV DJANGO_ADMIN_EMAIL="butler273@hotmail.com"
 ENV DJANGO_ADMIN_USERNAME="admin"
+ENV DJANGO_ADMIN_PASSWORD="Password1"
+
+ENV DB_ENGINE 'sqlite'
+ENV DB_NAME 'mysite'
+ENV DB_PASSWORD 'django'
+ENV DB_HOST 'postgres'
 
 ENTRYPOINT ["bash"]
 CMD ["-c", "./entrypoint.sh"]
