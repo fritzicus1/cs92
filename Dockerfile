@@ -4,12 +4,13 @@ RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y python3-pip t
 
 RUN alias python=python3
 RUN python3 -m pip install django psycopg2-binary
-RUN mkdir /db
-VOLUME /db
 
 COPY app/ /app
 
-WORKDIR /app/mysite
+WORKDIR /app
+
+RUN mkdir /db
+VOLUME /db
 ENV DB_ENGINE = "sqlite"
 
 ENV DB_NAME = "mysite"
