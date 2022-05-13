@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    function: webserver
+spec:
+  containers:
+  - name: httpd
+    image: docker.io/httpd:latest
+    ports:
+    - containerPort: 80
